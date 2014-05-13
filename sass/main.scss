@@ -1,0 +1,529 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:100italic,300,700);
+
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+.clear-fix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+// generic values
+$ani: 0.25s;
+$pad: 20px;
+$frame: 940px;
+$modHeight: 320px;
+
+// color values
+$white: #fff;
+
+$purple: #66288e;
+$purpleDes: darken($purple, 25);
+$purpleLine: lighten($purple, 50);
+$purpleBG: #f0eaf4;
+
+$red: #ff003d;
+$redDes: darken($red, 25);
+$redLine: lighten($red, 50);
+$redBG: #ffe6ec;
+
+$blue: #3d86ee;
+$blueDes: darken($blue, 25);
+$blueLine: lighten($blue, 50);
+$blueBG: #eef3fe;
+
+$green: #00aa9d;
+$greenDes: darken($green, 25);
+$greenLine: lighten($green, 50);
+$greenBG: #e6f7f5;
+
+$orange: #ff3a0d;
+$orangeDes: darken($orange, 25);
+$orangeLine: lighten($orange, 50);
+$orangeBG: #ffece6;
+
+$teal: #00aa9d;
+$orange: #ff3a0d;
+
+$bulGray: lighten(black, 50%);
+
+@mixin vendorize($property, $value) {
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-ms-#{$property}: $value;
+	-o-#{$property}: $value;
+	#{$property}: $value;
+}
+
+@mixin pseudo{
+	position: absolute;
+	display: block;
+	content: "";
+}
+
+@mixin cleanLink{
+	text-decoration: none;
+}
+
+@mixin vertShadow{
+	@include pseudo;
+	background: {
+		image: url(../img/sprite.png);
+		position: 0 -120px;
+		repeat: no-repeat;
+	}
+	height: $modHeight;
+	right: 100%;
+	top: 0;
+	width: 20px;
+}
+
+@mixin keyframes($aniName){
+
+    @-webkit-keyframes $aniName{
+        @content;
+    }
+    @-moz-keyframes $aniName{
+        @content;
+    }
+    @-o-keyframes $aniName{
+        @content;
+    }
+    @keyframes $aniName{
+        @content;
+    }
+}
+
+
+
+
+
+
+
+
+///////////////
+
+
+
+
+
+
+
+
+
+.ps-container .ps-scrollbar-x-rail {
+    position: absolute;
+    bottom: 3px;
+    height: 8px;
+    border-radius: 4px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transition: background-color .2s linear, opacity .2s linear;
+}
+.ps-container:hover .ps-scrollbar-x-rail, .ps-container.hover .ps-scrollbar-x-rail {
+    opacity: .6;
+    filter: alpha(opacity=60);
+}
+.ps-container .ps-scrollbar-x-rail:hover, .ps-container .ps-scrollbar-x-rail.hover {
+    background-color: #eee;
+    opacity: .9;
+    filter: alpha(opacity=90);
+}
+.ps-container .ps-scrollbar-x-rail.in-scrolling {
+    background-color: #eee;
+    opacity: .9;
+    filter: alpha(opacity=90);
+}
+.ps-container .ps-scrollbar-y-rail {
+    position: absolute;
+    right: 3px;
+    width: 8px;
+    border-radius: 4px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transition: background-color .2s linear, opacity .2s linear;
+}
+.ps-container:hover .ps-scrollbar-y-rail, .ps-container.hover .ps-scrollbar-y-rail {
+    opacity: .6;
+    filter: alpha(opacity=60);
+}
+.ps-container .ps-scrollbar-y-rail:hover, .ps-container .ps-scrollbar-y-rail.hover {
+    background-color: #eee;
+    opacity: .9;
+    filter: alpha(opacity=90);
+}
+.ps-container .ps-scrollbar-y-rail.in-scrolling {
+    background-color: #eee;
+    opacity: .9;
+    filter: alpha(opacity=90);
+}
+.ps-container .ps-scrollbar-x {
+    position: absolute;
+    bottom: 0;
+    height: 8px;
+    background-color: #aaa;
+    border-radius: 4px;
+    transition: background-color .2s linear;
+}
+.ps-container.ie6 .ps-scrollbar-x {
+    font-size: 0;
+}
+.ps-container .ps-scrollbar-x-rail:hover .ps-scrollbar-x, .ps-container .ps-scrollbar-x-rail.hover .ps-scrollbar-x {
+    background-color: #999;
+}
+.ps-container .ps-scrollbar-y {
+    position: absolute;
+    right: 0;
+    width: 8px;
+    background-color: #aaa;
+    border-radius: 4px;
+    transition: background-color .2s linear;
+}
+.ps-container.ie6 .ps-scrollbar-y {
+    font-size: 0;
+}
+.ps-container .ps-scrollbar-y-rail:hover .ps-scrollbar-y, .ps-container .ps-scrollbar-y-rail.hover .ps-scrollbar-y {
+    background-color: #999;
+}
+.ps-container.ie .ps-scrollbar-x, .ps-container.ie .ps-scrollbar-y {
+    visibility: hidden;
+}
+.ps-container.ie:hover .ps-scrollbar-x, .ps-container.ie:hover .ps-scrollbar-y, .ps-container.ie.hover .ps-scrollbar-x, .ps-container.ie.hover .ps-scrollbar-y {
+    visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+///////////////
+
+
+
+
+
+
+
+
+html, body{
+	height: 100%;
+}
+
+h2, .h2{
+	font: {
+		weight: 100;
+		size: 44px;
+		style: italic;
+	}
+	margin: 0 0 ($pad / 2) 0;
+	padding: 0;
+	text-transform:lowercase;
+}
+
+h3, .h3{
+	font: {
+		weight: 100;
+		size: 25px;
+		style: normal;
+	}
+	margin: 0;
+	padding: 0;
+
+}
+
+#hub{
+	font: {
+		family: "Roboto", arial, sans-serif;
+		weight: 300;
+	}
+	margin: 0 auto;
+	width: $frame;
+}
+
+.roundCorners{
+	border-radius: 7px;
+	overflow: hidden;
+}
+
+.module{
+	$width: 300px;
+	$shadowHeight : $pad * 2;
+	//float: left;
+	margin-bottom: $shadowHeight + ($pad / 2);
+	position: relative;
+
+	&.small{
+		width: $width;
+
+		&:before{
+			background-position: 0 ($shadowHeight * -2);
+		}
+	}
+
+	&.medium{
+		width: ($width * 2) + $pad;
+
+		&:before{
+			background-position: 0 ($shadowHeight * -1);
+		}
+	}
+
+	&.large{
+		width: ($width * 3) + ($pad * 2);
+
+		&:before{
+			background-position: 0 ($shadowHeight * -0);
+		}
+	}
+
+	&:before{
+		@include pseudo;
+		background: {
+			image: url(../img/sprite.png);
+			repeat: no-repeat;
+		}
+		height: $shadowHeight;
+		left: 0;
+		top: 100%;
+		width: 100%;
+	}
+}
+
+/*
+ *           _           
+ *  __  ___ | | ___  _ _ 
+ * / _|/ _ \| |/ _ \| '_|
+ * \__|\___/|_|\___/|_|  
+ *
+ *
+ */
+
+.module.red{
+	color: $red;
+
+	.cta{
+		background-color: $red;
+	}
+
+	.description{
+
+		&:after{
+			@include pseudo;
+			background-image: linear-gradient(to bottom, rgba($redBG, 0), $redBG 80px);
+		}
+
+		span{
+			color: $redDes;
+		}
+	}
+}
+
+.module.blue{
+	color: $blue;
+
+	.cta{
+		background-color: $blue;
+	}
+
+	.description{
+
+		&:after{
+			@include pseudo;
+			background-image: linear-gradient(to bottom, rgba($blueBG, 0), $blueBG 80px);
+		}
+
+		span{
+			color: $blueDes;
+		}
+	}
+}
+
+.module.purple{
+	color: $purple;
+
+	.cta{
+		background-color: $purple;
+	}
+
+	.description{
+
+		&:after{
+			@include pseudo;
+			background-image: linear-gradient(to bottom, rgba($purpleBG, 0), $purpleBG 80px);
+		}
+
+		span{
+			color: $purpleDes;
+		}
+	}
+}
+
+.module.green{
+	color: $green;
+
+	.cta{
+		background-color: $green;
+	}
+
+	.description{
+
+		&:after{
+			@include pseudo;
+			background-image: linear-gradient(to bottom, rgba($greenBG, 0), $greenBG 80px);
+		}
+
+		span{
+			color: $greenDes;
+		}
+	}
+}
+
+.module.orange{
+	color: $orange;
+
+	.cta{
+		background-color: $orange;
+	}
+
+	.description{
+
+		&:after{
+			@include pseudo;
+			background-image: linear-gradient(to bottom, rgba($orangeBG, 0), $orangeBG 80px);
+		}
+
+		span{
+			color: $orangeDes;
+		}
+	}
+}
+
+article{
+	height: $modHeight;
+	position: relative;
+
+	img{
+		height: auto;
+		width: 100%;
+	}
+
+	.description{
+		background-image: linear-gradient(to bottom, rgba($white, 0.5), $white 50px);
+		//border-top: 1px solid white; (changed to the pseudo element below...)
+		bottom: 0;
+		height: 160px;
+		left: 0;
+		padding: $pad;
+		position: absolute;
+
+		&:before{ // the white stroke at the dop of the description container...
+			@include pseudo;
+			background-image: linear-gradient(to right, rgba($white, 0), $white, rgba($white, 0));
+			height: 1px;
+			left: 0;
+			top: 0;
+			width: 100%;
+		}
+
+		&:after{
+			@include pseudo;
+			// background-image: linear-gradient(to bottom, rgba($redBG, 0), $redBG);
+			bottom: 0;
+			height: 100px;
+			left: 0;
+			pointer-events: none;
+			width: 100%;
+		}
+	}
+
+	.cta{
+		@include cleanLink;
+		// background-color: $red;
+		border-radius: 3px;
+		bottom: $pad;
+		color: $white;
+		font: {
+			weight: 700;
+			size: 12px;
+			style: normal;
+		}
+		left: $pad;
+		padding: 2px 10px;
+		position: absolute;
+	}
+}
+
+/*
+ *  _                    
+ * | |_  _  _  _ __  ___ 
+ * |  _|| || || '_ \/ -_)
+ *  \__| \_, || .__/\___|
+ *       |__/ |_|        
+ *
+ */
+
+.stories .scrollContainer{
+	width: 9999999px;
+
+	article{
+		float: left;
+		width: 314px; // $frame / 3;
+
+		&:before{
+			@include vertShadow;
+		}
+	}
+}
+
+.inspire{
+
+	article{
+		float: left;
+		width: 300px;
+	}
+}
+
+.deals{
+
+	article{
+		float: left;
+		width: $frame - 320px;
+	}
+}
+
+.inspire, .deals{
+
+	.priceList{
+		background-image: linear-gradient(to bottom, $white, $purpleBG);
+		float: left;
+		height: $modHeight;
+		overflow: hidden;
+		position: relative;
+		width: 320px;
+
+		&:before{
+			@include vertShadow;
+		}
+
+		.scrollContainer{
+			list-style-type: none;
+			margin: 0;
+			padding: 0 $pad;
+
+			li{
+				padding: ($pad / 2) 0;
+				border-top: 1px solid $purpleLine;
+
+				&:nth-child(1){
+					border: 0;
+				}
+			}
+		}
+	}
+}
