@@ -305,6 +305,18 @@ article {
   float: left;
   width: 620px; }
 
+.inspire article:after, .deals article:after {
+  position: absolute;
+  display: block;
+  content: "";
+  background-image: url(../img/sprite.png);
+  background-position: 0 -120px;
+  background-repeat: no-repeat;
+  height: 320px;
+  right: 100%;
+  top: 0;
+  width: 20px;
+  right: 0; }
 .inspire .priceList, .deals .priceList {
   background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#f0eaf4));
   background-image: -webkit-linear-gradient(top, white, #f0eaf4);
@@ -314,17 +326,6 @@ article {
   overflow: hidden;
   position: relative;
   width: 320px; }
-  .inspire .priceList:before, .deals .priceList:before {
-    position: absolute;
-    display: block;
-    content: "";
-    background-image: url(../img/sprite.png);
-    background-position: 0 -120px;
-    background-repeat: no-repeat;
-    height: 320px;
-    right: 100%;
-    top: 0;
-    width: 20px; }
   .inspire .priceList .scrollContainer, .deals .priceList .scrollContainer {
     list-style-type: none;
     margin: 0;

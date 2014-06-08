@@ -1,0 +1,58 @@
+[
+	{
+		"module": "stories",
+		"heading" : "popular headlines",
+		"active": "true",
+		"color": "red",
+		"size": "large"
+	},
+	{
+		"module": "deals",
+		"heading" : "top deals",
+		"active": "true",
+		"color": "purple",
+		"size": "large"
+	},
+	{
+		"module": "expert",
+		"heading" : "ask an expert",
+		"active": "true",
+		"color": "green",
+		"size": "small"
+	},
+	{
+		"module": "chat",
+		"heading" : "live chat",
+		"active": "true",
+		"color": "red",
+		"size": "small"
+	},
+	{
+		"module": "fact",
+		"heading" : "fact box",
+		"active": "true",
+		"color": "blue",
+		"size": "small"
+	},
+	{
+		"module": "inspire",
+		"heading" : "inspire",
+		"active": "true",
+		"color": "red",
+		"size": "medium"
+	},
+	{
+		"module": "quiz",
+		"heading" : "quiz",
+		"active": "true",
+		"color": "blue",
+		"size": "small"
+	},
+	{
+		"module": "stuffNation",
+		"heading" : "stuff nation",
+		"active": "true",
+		"color": "orange",
+		"size": "small"
+	}
+]

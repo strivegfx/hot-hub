@@ -499,6 +499,11 @@ article{
 
 .inspire, .deals{
 
+	article:after{
+		@include vertShadow;
+		right: 0;
+	}
+
 	.priceList{
 		background-image: linear-gradient(to bottom, $white, $purpleBG);
 		float: left;
@@ -506,10 +511,6 @@ article{
 		overflow: hidden;
 		position: relative;
 		width: 320px;
-
-		&:before{
-			@include vertShadow;
-		}
 
 		.scrollContainer{
 			list-style-type: none;
